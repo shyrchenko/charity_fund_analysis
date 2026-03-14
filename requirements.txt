@@ -1,0 +1,7 @@
+streamlit
+pandas
+duckdb
+plotly
+pdfplumber
+curl_cffi
+requests
