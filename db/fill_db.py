@@ -2,7 +2,7 @@ import datetime
 
 from data_collection.prytula.parser import parse_report as parse_prytula_report
 from data_collection.united24.parser import parse_daily_income as parse_united24_report
-from data_collection.savelife.parser import parse_daily_income as parse_savelife_report
+from data_collection.savelife.parser import parse_transactions as parse_savelife_report
 from data_collection.sternenko.parser import parse_report as parse_sternenko_report
 from .utils import create_db, insert_data
 import duckdb
@@ -21,7 +21,9 @@ def main():
     con = duckdb.connect("charity_reports.duckdb")
     insert_data(con, prytula_report)
     insert_data(con, united24_report)
+    print("Parsed and inserting Savelife report...")
     insert_data(con, savelife_report)
+    print("Parsed and inserting Sternenko report...")
     insert_data(con, sternenko_report)
     con.close()
 
