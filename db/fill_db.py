@@ -20,11 +20,13 @@ def main():
 
     con = duckdb.connect("charity_reports.duckdb")
     insert_data(con, prytula_report)
+    print("Parsed and inserted Prytula report...")
     insert_data(con, united24_report)
-    print("Parsed and inserting Savelife report...")
+    print("Parsed and inserted United24 report...")
     insert_data(con, savelife_report)
-    print("Parsed and inserting Sternenko report...")
+    print("Parsed and inserted Savelife report...")
     insert_data(con, sternenko_report)
+    print("Parsed and inserted Sternenko report...")
     con.close()
 
 
